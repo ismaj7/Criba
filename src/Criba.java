@@ -2,19 +2,8 @@ import java.util.Scanner;
 
 public class Criba {
 
-    // Generar nÃºmeros primos de 1 a maxNumber
+    // Generar números primos de 1 a maxNumber
     public static int[] generarPrimos (int maxNumber) {
-
-        /*
-
-        int i;
-        int j;
-
-        En los apuntes no lo pone, pero estoy seguro
-        de que esto no se puede hacer, tienes que
-        inicianizarlo en cada bucle...
-
-         */
 
         if (maxNumber >= 2) {
 
@@ -33,21 +22,21 @@ public class Criba {
             // Criba:
             for (int i = 2; i < Math.sqrt(arrSize) + 1; i++) {
                 if (esPrimo[i]) {
-                    // Eliminar los mÃºltiplos de i
+                    // Eliminar los múltiplos de i
                     for (int j = 2 * i; j < arrSize; j += i) {
                         esPrimo[j] = false;
                     }
                 }
             }
 
-            // Â¿CuÃ¡ntos primos hay?:
+            // ¿Cuántos primos hay?:
             for (int i = 0; i < arrSize; i++) {
                 if (esPrimo[i]) {
                     cuenta++;
                 }
             }
 
-            // Rellenar el vector de nÃºmeros primos:
+            // Rellenar el vector de números primos:
             int[] primos = new int[cuenta];
             
             for (int i = 0, j = 0; i < arrSize; i++) {
@@ -60,7 +49,7 @@ public class Criba {
 
         } else { // maxNumber < 2
             return new int[0];
-            // Vector vacÃ­o.
+            // Vector vacío.
         }
     }
 
@@ -70,7 +59,7 @@ public class Criba {
         int[] vector;
         Scanner inputValue = new Scanner(System.in);
 
-        System.out.println("Introduce el nÃºmero mÃ¡ximo para la criba de ErastÃ³tenes: ");
+        System.out.println("Introduce el número máximo para la criba de Erastótenes: ");
 
         numMaximo = inputValue.nextInt();
 
