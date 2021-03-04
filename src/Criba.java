@@ -1,23 +1,23 @@
 import java.util.Scanner;
 
 public class Criba {
-
+	
     // Generar números primos de 1 a maxNumber
     public static int[] generarPrimos (int maxNumber) {
+    	
+    	// Declaraciones 
+        int arrSize = maxNumber + 1; // Tamaño del array
+        boolean[] esPrimo = new boolean[arrSize];
+        int cuenta = 0;
+        
+     // Inicializar el array:
+        for (int i = 0; i < arrSize; i++) {
+            esPrimo[i] = true;
+            // Eliminar el 0 y el 1, que no son primos:
+            esPrimo[0] = esPrimo[1] = false;
+        }
 
         if (maxNumber >= 2) {
-
-            // Declaraciones
-            int arrSize = maxNumber + 1; // TamaÃ±o del array
-            boolean[] esPrimo = new boolean[arrSize];
-            int cuenta = 0;
-
-            // Inicializar el array:
-            for (int i = 0; i < arrSize; i++) {
-                esPrimo[i] = true;
-                // Eliminar el 0 y el 1, que no son primos:
-                esPrimo[0] = esPrimo[1] = false;
-            }
 
             // Criba:
             for (int i = 2; i < Math.sqrt(arrSize) + 1; i++) {
